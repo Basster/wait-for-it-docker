@@ -1,8 +1,7 @@
-FROM debian:bookworm-slim
+FROM bash:5.2
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    wait-for-it \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+ADD https://github.com/vishnubob/wait-for-it/raw/refs/heads/master/wait-for-it.sh /usr/bin/wait-for-it
+RUN set -eux; \
+    chmod +x /usr/bin/wait-for-it;
 
 ENTRYPOINT [ "wait-for-it" ]

@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 architecture=$(arch)
-image=djbasster/wait-for-it:bookworm
+image=djbasster/wait-for-it:bash
 latest=djbasster/wait-for-it:latest
 
 if [ "$architecture" = "arm64" ] || [ "$CI" = true ]; then
